@@ -40,7 +40,7 @@ int ** soustraire (int ** M1, int ** M2, int n) {
 
 
 
-int **strassenMultiply(int **A,int** B,int n){
+int **Strassen (int **A,int** B,int n){
 
 
 
@@ -76,13 +76,13 @@ for (int i = 0; i <k; i ++)
     }
 
 
-int ** P1 = strassenMultiply (A11, soustraire (B12, B22, k), k); 
-int ** P2 = strassenMultiply (ajouter (A11, A12, k), B22, k); 
-int ** P3 = strassenMultiply (ajouter (A21, A22, k), B11, k); 
-int ** P4 = strassenMultiply (A22, soustraire (B21, B11, k), k); 
-int ** P5 = strassenMultiply (ajouter (A11, A22, k), ajouter (B11, B22, k), k); 
-int ** P6 = strassenMultiply (soustraire (A12, A22, k), ajouter (B21, B22, k), k); 
-int ** P7 = strassenMultiply (soustraire (A11, A21, k), ajouter (B11, B12, k), k);
+int ** P1 = Strassen  (A11, soustraire (B12, B22, k), k); 
+int ** P2 = Strassen  (ajouter (A11, A12, k), B22, k); 
+int ** P3 = Strassen  (ajouter (A21, A22, k), B11, k); 
+int ** P4 = Strassen  (A22, soustraire (B21, B11, k), k); 
+int ** P5 = Strassen  (ajouter (A11, A22, k), ajouter (B11, B22, k), k); 
+int ** P6 = Strassen  (soustraire (A12, A22, k), ajouter (B21, B22, k), k); 
+int ** P7 = Strassen  (soustraire (A11, A21, k), ajouter (B11, B12, k), k);
 
 int ** C11 = soustraire (ajouter (ajouter (P5, P4, k), P6, k), P2, k); 
 int ** C12 = ajouter (P1, P2, k); 
@@ -177,7 +177,7 @@ int main()
     afficher(A,n);
     afficher(B,n);
 
-   int **C= strassenMultiply(A,B,n);
+   int **C= Strassen (A,B,n);
 
     afficher(C,n);
 
